@@ -1,0 +1,21 @@
+pandas
+numpy
+seaborn
+
+-e .
+
+
+# -e . is used to trigger setup.py file to build the package and install it in editable mode. 
+# This allows for easy development and testing of the package without needing to reinstall it after every change.
+
+# -e . means we install our internal packages too
+
+#    Package Type	    Example	                    How it's installed
+#    External package	pandas, numpy, sklearn	    pip install pandas
+#    Your own package	src	                        pip install -e .
+
+
+
+
+# whenever trying to install requirements.txt at that time setup.py file should be run to build packages
+# for enabling that we write - e .
