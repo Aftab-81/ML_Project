@@ -1,11 +1,13 @@
 import logging
 import os
 from datetime import datetime
+import sys
+
+from src.exception import CustomException
 
 LOG_FILE = f"{datetime.now().strftime('%Y-%m-%d %H-%M-%S')}.log"
 
 logs_path = os.path.join(os.getcwd(), "logs")
-print(logs_path)
 
 os.makedirs(logs_path, exist_ok=True)
 
@@ -18,9 +20,10 @@ logging.basicConfig(
 )
 
 
-# if __name__ == "__main__":
 
-#    logging.info("Logging has started.")
+#   if __name__ == "__main__":
+#        logging.info("Divide by zero error occurred.")
+    
 
     # means:
 """

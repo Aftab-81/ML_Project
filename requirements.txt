@@ -1,8 +1,11 @@
 pandas
 numpy
 seaborn
-
--e .
+scikit-learn
+matplotlib
+catboost
+xgboost
+# -e .
 
 
 # -e . is used to trigger setup.py file to build the package and install it in editable mode. 
