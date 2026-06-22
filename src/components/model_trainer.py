@@ -57,17 +57,70 @@ class ModelTrainer:
                 "AdaBoostRegressor": AdaBoostRegressor()
             }
 
+            params = {
+
+    "Linear Regression": {
+        "fit_intercept": [True, False]
+    },
+
+    "Gradient Boosting Regressor": {
+        "n_estimators": [100, 200],
+        "learning_rate": [0.05, 0.1],
+        "max_depth": [3, 5]
+    },
+
+    "KNeighborsRegressor": {
+        "n_neighbors": [3, 5, 7],
+        "weights": ["uniform", "distance"]
+    },
+
+    "DecisionTreeRegressor": {
+        "max_depth": [5, 10, None],
+        "min_samples_split": [2, 5]
+    },
+
+    "RandomForestRegressor": {
+        "n_estimators": [100, 200],
+        "max_depth": [10, 20],
+        "min_samples_split": [2, 5]
+    },
+
+    "XGBRegressor": {
+        "n_estimators": [100, 200],
+        "learning_rate": [0.05, 0.1],
+        "max_depth": [3, 5]
+    },
+
+    "CatBoostRegressor": {
+        "iterations": [100, 200],
+        "learning_rate": [0.05, 0.1],
+        "depth": [4, 6]
+    },
+
+    "AdaBoostRegressor": {
+        "n_estimators": [50, 100],
+        "learning_rate": [0.05, 0.1]
+    }
+}
+
             logging.info("Requesting for model report")
-            model_report: dict = evaluate_model(X_train = X_train, y_train = y_train, X_test = X_test, y_test = y_test, models = models)
+            model_report, best_models = evaluate_model(
+                X_train=X_train,
+                y_train=y_train,
+                X_test=X_test,
+                y_test=y_test,
+                models=models,
+                params=params
+            )
             logging.info("Model report is received")
 
-            best_model_score = max(sorted(model_report.values()))
+            best_model_score = max(model_report.values())
 
             best_model_name = list(model_report.keys())[ # get index value
                 list(model_report.values()).index(best_model_score) # index which having best_model_score
             ]
                 
-            best_model = models[best_model_name]
+            best_model = best_models[best_model_name]
             
             if best_model_score < 0.6:
                 raise CustomException("No best model found")
