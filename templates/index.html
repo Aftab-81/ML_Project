@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance Predictor</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body{
+            min-height:100vh;
+            background:linear-gradient(135deg,#0f172a,#1e3a8a);
+            color:white;
+        }
+
+        .container{
+            max-width:1100px;
+            margin:auto;
+            padding:40px 20px;
+        }
+
+        .hero{
+            text-align:center;
+            padding:80px 20px;
+        }
+
+        .hero h1{
+            font-size:3.5rem;
+            margin-bottom:20px;
+        }
+
+        .highlight{
+            color:#93c5fd;
+        }
+
+        .hero p{
+            max-width:800px;
+            margin:auto;
+            font-size:1.2rem;
+            color:#e2e8f0;
+            line-height:1.8;
+        }
+
+        .btn{
+            display:inline-block;
+            margin-top:35px;
+            padding:15px 35px;
+            background:white;
+            color:#1e3a8a;
+            text-decoration:none;
+            border-radius:10px;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        .btn:hover{
+            transform:translateY(-3px);
+        }
+
+        .section{
+            background:white;
+            color:#1e293b;
+            border-radius:15px;
+            padding:35px;
+            margin-top:30px;
+            box-shadow:0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .section h2{
+            color:#1e3a8a;
+            margin-bottom:15px;
+        }
+
+        .section p{
+            line-height:1.8;
+            color:#475569;
+        }
+
+        .tech-stack{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+            gap:15px;
+            margin-top:20px;
+        }
+
+        .card{
+            background:#eff6ff;
+            padding:20px;
+            border-radius:10px;
+            text-align:center;
+            font-weight:600;
+            color:#1e3a8a;
+        }
+
+        footer{
+            text-align:center;
+            margin-top:40px;
+            color:#cbd5e1;
+            padding-bottom:20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <section class="hero">
+            <h1>
+                Student Performance
+                <span class="highlight">Predictor</span>
+            </h1>
+
+            <p>
+                A Machine Learning web application that predicts a student's
+                Mathematics Score based on demographic information,
+                parental education level, lunch type, test preparation status,
+                reading score, and writing score.
+            </p>
+
+            <a href="{{ url_for('pred_datapoint') }}" class="btn">
+                Start Prediction
+            </a>
+        </section>
+
+        <section class="section">
+            <h2>About the Project</h2>
+
+            <p>
+                This project uses Machine Learning techniques to estimate
+                a student's Mathematics Score from several academic and
+                socio-economic factors. The goal is to demonstrate a complete
+                end-to-end Machine Learning workflow including data ingestion,
+                data transformation, model training, evaluation, and deployment
+                using Flask.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Technology Stack</h2>
+
+            <div class="tech-stack">
+                <div class="card">Python</div>
+                <div class="card">Pandas</div>
+                <div class="card">NumPy</div>
+                <div class="card">Scikit-Learn</div>
+                <div class="card">Flask</div>
+                <div class="card">HTML & CSS</div>
+                <div class="card">Machine Learning</div>
+                <div class="card">Git & GitHub</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>About the Developer</h2>
+
+            <p>
+                Hello! I'm a passionate Computer Science student with a strong
+                interest in Data Science, Machine Learning, and Artificial
+                Intelligence. This project demonstrates my ability to build,
+                train, evaluate, and deploy machine learning models as
+                production-ready web applications.
+            </p>
+        </section>
+
+        <footer>
+            Student Performance Predictor • Built with Flask & Machine Learning
+        </footer>
+
+    </div>
+
+</body>
+</html>
